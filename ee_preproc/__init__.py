@@ -4,11 +4,4 @@ __version__ = "0.0.0"
 __author__ = "Andreas Vollrath"
 __email__ = "andreas.vollrath@fao.org"
 
-
-def hello_world() -> str:
-    """Hello world demo method.
-
-    Returns:
-        the hello world string
-    """
-    return "hello world !"
+from .landsat.landsat_collection import landsat_collection as landsat_collection

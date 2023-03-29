@@ -17,7 +17,7 @@ classifiers = [
     "Programming Language :: Python :: 3.10",
 ]
 requires-python = ">=3.6.9"
-dependencies = []
+dependencies = ['earthengine-api']
 
 [[project.authors]]
 name = "Andreas Vollrath"
@@ -83,3 +83,6 @@ ignore_missing_imports = true
 install_types = true
 non_interactive = true
 warn_redundant_casts = true
+
+[tool.licensecheck]
+using = "PEP631:test;dev;doc"
