@@ -18,7 +18,7 @@ def line(start, end):
     return ee.Geometry.LineString(ee.List([start, end]))
 
 
-def degToRad(deg):
+def deg_to_rad(deg):
     return deg.multiply(PI().divide(180))
 
 
@@ -26,17 +26,17 @@ def value(list, index):
     return ee.Number(list.get(index))
 
 
-def radToDeg(rad):
+def rad_to_deg(rad):
     return rad.multiply(180).divide(PI())
 
 
 def where(condition, trueValue, falseValue):
     trueMasked = trueValue.mask(condition)
-    falseMasked = falseValue.mask(invertMask(condition))
+    falseMasked = falseValue.mask(invert_mask(condition))
     return trueMasked.unmask(falseMasked)
 
 
-def invertMask(mask):
+def invert_mask(mask):
     return mask.multiply(-1).add(1)
 
 
