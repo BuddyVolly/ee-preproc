@@ -231,9 +231,6 @@ def landsat_collection(
         # merge collection
         coll = coll.merge(l4_coll) if coll else l4_coll
 
-    if brdf:
-        coll.map(apply_brdf)
-
     # scale to int16
     coll = coll.map(
         lambda image: image.multiply(10000)
@@ -243,6 +240,10 @@ def landsat_collection(
         .set("system:footprint", image.get("system:footprint"))
     )
 
+    if brdf:
+        print('here')
+        coll = coll.map(apply_brdf)
+    
     # add indices and tasseled cap
     coll = coll.map(apply_tc).map(add_indices)
 
