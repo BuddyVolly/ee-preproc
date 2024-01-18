@@ -241,7 +241,6 @@ def landsat_collection(
     )
 
     if brdf:
-        print('here')
         coll = coll.map(apply_brdf)
     
     # add indices and tasseled cap
